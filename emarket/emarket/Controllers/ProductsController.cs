@@ -71,6 +71,8 @@ namespace emarket.Controllers
                     imgFile.SaveAs(Server.MapPath(path));
                 }
                 pd.product.image = path;
+               var categoryindb = DB.Categories.Single(c => c.id == pd.product.CategoryId);
+                categoryindb.number_of_products++;
                 DB.Products.Add(pd.product);
                 DB.SaveChanges();
                 return RedirectToAction("Index");

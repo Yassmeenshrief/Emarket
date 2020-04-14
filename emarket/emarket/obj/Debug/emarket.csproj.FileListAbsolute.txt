@@ -84,3 +84,4 @@ E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.
 E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.csproj.GenerateResource.cache
 E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.edit.resources
 E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.EditTablesName.resources
+E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.RemoveRequiered.resources

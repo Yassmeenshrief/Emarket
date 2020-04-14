@@ -145,6 +145,10 @@
     <Compile Include="Migrations\202004140323035_EditTablesName.designer.cs">
       <DependentUpon>202004140323035_EditTablesName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004140550045_RemoveRequiered.cs" />
+    <Compile Include="Migrations\202004140550045_RemoveRequiered.designer.cs">
+      <DependentUpon>202004140550045_RemoveRequiered.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
@@ -221,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004140323035_EditTablesName.resx">
       <DependentUpon>202004140323035_EditTablesName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004140550045_RemoveRequiered.resx">
+      <DependentUpon>202004140550045_RemoveRequiered.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
