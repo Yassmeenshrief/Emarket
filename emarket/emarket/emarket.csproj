@@ -149,7 +149,12 @@
     <Compile Include="Migrations\202004140550045_RemoveRequiered.designer.cs">
       <DependentUpon>202004140550045_RemoveRequiered.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005012016512_AddTable.cs" />
+    <Compile Include="Migrations\202005012016512_AddTable.designer.cs">
+      <DependentUpon>202005012016512_AddTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004140550045_RemoveRequiered.resx">
       <DependentUpon>202004140550045_RemoveRequiered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005012016512_AddTable.resx">
+      <DependentUpon>202005012016512_AddTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

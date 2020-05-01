@@ -17,7 +17,7 @@ namespace emarket.Models
         [Display(Name = "Image")]
         public string image { get; set; }
 
-        [Display(Name = "Price")]   
+        [Display(Name = "Price")]
         public float price { get; set; }
 
         [Display(Name = "Description")]
@@ -26,5 +26,6 @@ namespace emarket.Models
         [Column("category_id")]
         //[Required(ErrorMessage = "Please Enter Product Ctegory")]
         public int CategoryId { get; set; }
+        public virtual Cart Cart { get; set; }
     }
 }

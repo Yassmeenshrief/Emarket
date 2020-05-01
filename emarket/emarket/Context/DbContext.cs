@@ -13,12 +13,16 @@ namespace emarket.Context
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Cart> cart { get; set; }
+
         public StoreContext()
             : base("store")
         {
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
