@@ -153,6 +153,10 @@
     <Compile Include="Migrations\202005012016512_AddTable.designer.cs">
       <DependentUpon>202005012016512_AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005081817263_EditRelationship.cs" />
+    <Compile Include="Migrations\202005081817263_EditRelationship.designer.cs">
+      <DependentUpon>202005081817263_EditRelationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
@@ -236,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005012016512_AddTable.resx">
       <DependentUpon>202005012016512_AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005081817263_EditRelationship.resx">
+      <DependentUpon>202005081817263_EditRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

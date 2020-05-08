@@ -86,3 +86,4 @@ E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.
 E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.EditTablesName.resources
 E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.RemoveRequiered.resources
 E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.AddTable.resources
+E:\level3\sec term\IA .net\Project\emarket\emarket\obj\Debug\emarket.Migrations.EditRelationship.resources

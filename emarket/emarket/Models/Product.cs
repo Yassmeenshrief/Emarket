@@ -26,6 +26,6 @@ namespace emarket.Models
         [Column("category_id")]
         //[Required(ErrorMessage = "Please Enter Product Ctegory")]
         public int CategoryId { get; set; }
-        public virtual Cart Cart { get; set; }
+        public virtual ICollection<Cart> Cart { get; set; }
     }
 }
