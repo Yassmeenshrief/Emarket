@@ -157,6 +157,10 @@
     <Compile Include="Migrations\202005081817263_EditRelationship.designer.cs">
       <DependentUpon>202005081817263_EditRelationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005091811029_ReturnRelationBetweenCartProduct.cs" />
+    <Compile Include="Migrations\202005091811029_ReturnRelationBetweenCartProduct.designer.cs">
+      <DependentUpon>202005091811029_ReturnRelationBetweenCartProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
@@ -243,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005081817263_EditRelationship.resx">
       <DependentUpon>202005081817263_EditRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005091811029_ReturnRelationBetweenCartProduct.resx">
+      <DependentUpon>202005091811029_ReturnRelationBetweenCartProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

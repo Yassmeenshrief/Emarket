@@ -9,9 +9,9 @@ namespace emarket.Models
 {
     public class Cart
     {
-        [Key, Column(Order = 1)]
+        
         public DateTime added_at { get; set; }
-        [Key, Column(Order = 2)]
+        [Key]
         [ForeignKey("Product")]
         public int product_id { get; set; }
         public virtual Product Product { get; set; }
