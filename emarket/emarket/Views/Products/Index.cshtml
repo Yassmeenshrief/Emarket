@@ -1,41 +1,129 @@
-﻿@model IEnumerable<emarket.Models.Product>
-
+﻿@model emarket.ViewModel.CartProducts
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+ }
+
+<link href="~/Content/bootstrap.css" rel="stylesheet"/>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
 
 @using (Html.BeginForm("Index", "Products", FormMethod.Get))
 {
-    <div class="form-group">
+  <div class="form-group">
+    <h2>Products</h2>
+    <p>
+        @Html.ActionLink("Add New Product", "Add")
+    </p>
 
-        <h2>Products</h2>
-
-        <p>
-            @Html.ActionLink("Add New Product", "Add")
-        </p>
-
-        @Html.TextBox("search")
-        <input type="submit" value="Filter" class="btn btn-primary" />
-
-    </div>
+     @Html.TextBox("search")
+    <input type="submit" value="Filter" class="btn btn-primary" />
+  </div>
 }
-
 <hr>
 
 <div class="container">
     <div class="row">
-        @foreach (var product in Model)
+        @foreach (var product in Model.Product)
         {
             <div class="col-md-3">
                 <div class="item">
-                    <h4>@product.name</h4>
-                    <p class="text-primary">$@product.price</p><img src="@Url.Content(product.image)" class="img-fluid" width="200" height="200">
-                    <div class="overlay d-flex align-items-center justify-content-center">
-                        @Html.ActionLink("Details", "Details", new { id = product.id }, htmlAttributes: new { @class = "btn btn-primary" })
-                    </div>
+                  <h4>@product.name</h4>
+                      <p class="text-primary">$@product.price</p><img src="@Url.Content(product.image)" class="img-fluid" width="200" height="200">
+                      <div class="overlay d-flex align-items-center justify-content-center">
+                         @Html.ActionLink("Details", "Details", new { id = product.id }, htmlAttributes: new { @class = "btn btn-primary" })
+
+                                                    @*Add to cart button*@
+                           <a href="@Url.Action("Addtocart", "Cart", new { id = product.id })" class="btn btn-primary" target="_blank">
+                                                         Add To Cart
+                           </a>
+                       </div>
                 </div>
             </div>
-        }
+
+                       @* Cart list *@
+    <div>
+      <fieldset>
+         <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="modal fade" tabindex="-1" id="loginModal"data-keyboard="false" data-backdrop="static">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                                @*Header*@
+                                  <button type="button" class="close" data-dismiss="modal"> x </button>
+                                        <h4 class="modal-title">Cart List</h4>
+                                </div>
+                                  <div class="modal-body">
+
+                                                @*Body*@
+                                      <table class="table">
+
+                                          @*Datetime*@
+                                             <tr>
+                                               <th>
+
+                                               </th>
+                                               <th> Name </th>
+                                               <th> Price </th>
+                                               <th> Added_at </th>
+                                              </tr>
+                                       <tbody>
+                                        @foreach (var item in Model.cart)
+                                         {
+                                             <tr>
+                                               <td>
+                                                              @*Delete Action *@
+                                                  <a href="@Url.Action("Remove", "Cart",  new { id = item.product_id })" class="btn btn-primary" target="_blank">
+                                                  <span class="glyphicon glyphicon-remove "></span> 
+                                                   Remove </a>
+                                               </td>
+                                               <td> @Html.DisplayFor(modelItem => item.Product.name) </td>
+                                               
+                                               <td> @Html.DisplayFor(modelItem => item.Product.price) </td>
+                                               <td>
+                                                    @{
+
+                                                       var mint = (DateTime.Now - item.added_at).Minutes;
+                                                       var hours = (DateTime.Now - item.added_at).Hours;
+                                                       var days = (DateTime.Now - item.added_at).Days;
+
+                                                      }
+                                                   <p>Added  @days Days, @hours Hours, @mint Minutes ago </p>
+                                                </td>
+                                              </tr>
+                                         }
+                                       </tbody>
+                                      </table>
+                                   </div>
+                                  <div class="modal-footer"> </div>
+                             </div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+          </div>
+       </fieldset>
+     </div>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+          <script src="bootstrap/js/bootstrap.min.js"></script>
+
+            @*added one javascript and added button-id ( btnShowModal and btnHideModal ) to show and hide modal*@
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#btnShowModal").click(function () {
+                        $("#loginModal").modal('show');
+                    });
+
+                    $("#btnHideModal").click(function () {
+                        $("#loginModal").modal('hide');
+                    });
+                });
+            </script>
+         }
     </div>
 </div>

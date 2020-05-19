@@ -18,38 +18,45 @@ namespace emarket.Controllers
         // GET: Products
         public ActionResult Index(string search)
         {
+            var carts = DB.cart.ToList();
             var products = DB.Products.ToList();
-            var categries = DB.Categories.ToList();
-
+            var categories = DB.Categories.ToList();
             if (!string.IsNullOrEmpty(search))
             {
                 Category x = DB.Categories
                     .Where(c => c.name == search).FirstOrDefault<Category>();
-
                 if (x != null)
                 {
-
                     products = DB.Products
                         .Where(s => s.CategoryId == x.id).ToList();
                 }
                 else
                 {
-
                 }
             }
-            return View(products);
+                CartProducts productcart = new CartProducts()
+            {
+                cart = carts,
+                Product = products
+            };
+            return View(productcart);
         }
-        //public ActionResult Index()
-        //{
-        //    var products = DB.Products.Include(p => p.category);
-        //    return View(products.ToList());
-        //}
+            /*var products = db.products.Include(p => p.Cart).Include(p => p.category);
+            return View(products.ToList());*/
 
-        public ActionResult Details(int ID)
+            //public ActionResult Index()
+            //{
+            //    var products = DB.Products.Include(p => p.category);
+            //    return View(products.ToList());
+            //}
+
+            public ActionResult Details(int ID)
         {
             var product = DB.Products.SingleOrDefault(x => x.id == ID);
             return View(product);
         }
+
+     
 
         [HttpGet]
         public ActionResult Add()
@@ -59,6 +66,7 @@ namespace emarket.Controllers
             return View("Add", pc);
         }
 
+        
         [HttpPost]
         public ActionResult Add(CategoryProduct pd, HttpPostedFileBase imgFile)
         {
@@ -79,6 +87,9 @@ namespace emarket.Controllers
             }
             return Content("Done");
         }
+      
+        
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -91,8 +102,7 @@ namespace emarket.Controllers
                 return View("Edit",pc);
         }
 
-
-
+        
         [HttpPost]
         public ActionResult Edit(CategoryProduct CAPR, HttpPostedFileBase imgFile)
         {
@@ -115,14 +125,14 @@ namespace emarket.Controllers
             return RedirectToAction("index");
         }
 
-        //public ActionResult Delete(CategoryProduct pcc)
-        //{
-        //    var entry = DB.Entry(pcc.product);
-        //    entry.State = EntityState.Modified;
-        //    DB.SaveChanges();
+       // public ActionResult Delete(CategoryProduct pcc)
+      //  {
+          //  var entry = DB.Entry(pcc.product);
+           // entry.State = EntityState.Modified;
+           // DB.SaveChanges();
 
-        //    return RedirectToAction("Index");
-        //}
+            // return RedirectToAction("Index");
+    //    } 
 
     }
 }

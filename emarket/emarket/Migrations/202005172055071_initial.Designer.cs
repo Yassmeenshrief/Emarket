@@ -7,13 +7,13 @@ namespace emarket.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class EditTablesName : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EditTablesName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004140323035_EditTablesName"; }
+            get { return "202005172055071_initial"; }
         }
         
         string IMigrationMetadata.Source

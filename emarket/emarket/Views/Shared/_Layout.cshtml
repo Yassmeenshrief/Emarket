@@ -17,15 +17,23 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Emarket", "Index", "Products", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+             </div>
+                <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Products")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-            </div>
-        </div>
+                              @*Go to cart list link*@
+                <ul class="nav navbar-nav navbar-right" >
+                    <li>
+                        <a id="btnShowModal">
+                             Go to cart List
+                        </a>
+                    </li>
+                 </ul>
+                </div>
+         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
